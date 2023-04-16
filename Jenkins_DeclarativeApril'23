@@ -27,14 +27,14 @@ pipeline{
     steps{
         sh "echo setup sonarQube authentication"
         sh "echo 'Perfoming CodeQualityAnalysis' "
-        //sh "mvn sonar:sonar"    
+        sh "mvn sonar:sonar"    
         sh "echo 'CodeQualityAnalysis completed' "  
     }
    }
    stage('4UploadArtifacts') {
     steps{
       sh "echo configure nexus authentication"
-      //sh "mvn deploy"
+      sh "mvn deploy"
       sh "echo artifacts uploaded"
     }
    }
